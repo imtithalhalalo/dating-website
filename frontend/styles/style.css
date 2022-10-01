@@ -71,7 +71,7 @@ form {
     min-width: 400px;
 }
 
-.input-container > input {
+.input-container > input, textarea {
     background-color: #f2e9ebc3;
     font-size: 20px;
     padding-left: 20px;
@@ -83,11 +83,13 @@ form {
     outline: none;
 }
 
-input::placeholder {
-    font-size: 18px;
+input::placeholder, textarea::placeholder {
+    font-size: 17px;
     color: #31383F;
 }
-
+textarea {
+    height: 100px;
+}
 .group {
     display: flex;
     justify-content: space-between;
@@ -160,6 +162,7 @@ input::placeholder {
     width: 20%;
     height: 100%;
     position: fixed;
+    box-shadow: #31383F 0px 0px 10px 0px;
 }
 
 .main {
@@ -261,4 +264,25 @@ input::placeholder {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.profile-photo {
+    background: #31383F;
+    border-radius: 50%;
+}
+  
+.profile-photo .profile-img {
+    width: 118px;
+    height: 118px;
+}
+.image-upload > input {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.image-upload img {
+    cursor: pointer;
+}
+.image {
+    display: flex;
+    justify-content: center;
 }
