@@ -3,17 +3,17 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Gill Sans", sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 /* Utilities */
 .light-blue {
-    color: #A0B2C2;
+    color: #F2E9eb;
 }
 .lighter-blue {
     color: #D1D9DF;
 }
 .dark-blue {
-    color: #2A384C;
+    color: #31383F;
 }
 .light-grey {
     color: #F0F0F0;
@@ -22,7 +22,7 @@ body {
     height: 100vh;
 }
 h1, h4, h3 {
-    color: #2A384C;
+    color: #31383F;
     font-weight: bolder;
     transition: .2s;
 }
@@ -37,14 +37,14 @@ h3 {
 }
 a {
     text-decoration: none;
-    color: #2A384C;
+    color: #31383F;
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
 }
 /* ----------- Sign Up ------------ */
 .background {
-    background-color: #D1D9DF;
+    background-color: #F2E9eb;
 }
 .main-container {
     display: flex;
@@ -64,7 +64,7 @@ form {
     width: 468px;
     min-width: 467px;
     height: 600px;
-    box-shadow: #2A384C 0px .3px 15px 0px;
+    box-shadow: #31383F 0px .3px 15px 0px;
 }
 .input-container {
     display: flex;
@@ -72,7 +72,7 @@ form {
 }
 
 .input-container > input {
-    background-color: #a0b2c2c2;
+    background-color: #f2e9ebc3;
     font-size: 20px;
     padding-left: 20px;
     border: none;
@@ -85,7 +85,7 @@ form {
 
 input::placeholder {
     font-size: 18px;
-    color: #2A384C;
+    color: #31383F;
 }
 
 .group {
@@ -101,14 +101,14 @@ input::placeholder {
 }
 .gender-input {
     padding: 10px 20px;
-    background-color: #a0b2c2c2;
+    background-color: #f2e9ebc3; 
     border-radius: 10px;
-    color: #2A384C;
+    color: #31383F;
     margin: 20px;
 }
 .submit {
     padding: 10px 20px;
-    background-color: #2A384C;
+    background-color: #31383F;
     border-radius: 10px;
     color: #F0F0F0;
     font-weight: bolder;
@@ -122,13 +122,13 @@ input::placeholder {
 }
 
 .login > span {
-    color: #2A384C;
+    color: #31383F;
     font-weight: 500;
 }
 
 .login > button {
     font-size: 18px;
-    color: #2A384C;
+    color: #31383F;
     border: none;
     margin-left: 20px;
     background:none;
@@ -188,17 +188,17 @@ input::placeholder {
     font-size: 1.5rem;
 }
 .nav-links a:hover {
-    background-color:#f0f9ff;
+    background-color:#F2E9eb;
     border-radius: 50px;
 }
 .nav-links a:hover:first-child {
-    background-color: #D1D9DF;
+    background-color:#F2E9eb;
 }
 .nav-links a:first-child i {
     margin: 0;
 }
 .logout-button {
-    background-color: #2A384C;
+    background-color: #31383F;
     width: 90%;
     height: 90px;
     color: #fff;
@@ -222,7 +222,7 @@ input::placeholder {
     margin-left: 30px;
     margin-bottom: 50px;
     border-radius: 20px;
-    box-shadow: #2A384C 0px 0px 10px 0px;
+    box-shadow: #31383F 0px 0px 10px 0px;
 }
 
 .image-user {
@@ -238,7 +238,7 @@ input::placeholder {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
-    background-color: #D1D9DF;
+    background-color: #F2E9eb;
     border-radius: 0 0 20px 20px;
     width: 100%;
 }
