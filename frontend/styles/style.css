@@ -211,3 +211,48 @@ input::placeholder {
     margin-top: 15px;
     font-size: 1rem;
 }
+
+/* Main Section Users */
+.column {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: #2A384C 0px 0px 10px 0px;
+}
+
+.image-user {
+    width: 150px;
+    height: 150px;
+}
+.image-user img {
+    width: 100%;
+    border-radius: 50%;
+    height: fit-content;
+}
+.info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    background-color: #D1D9DF;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+}
+.info-details {
+    width: 100%;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    padding-top: 50px;
+    background-color: #fff;
+    justify-content: space-around;
+}
