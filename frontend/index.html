@@ -8,6 +8,67 @@
     <title>Dating Website</title>
 </head>
 <body class="background">
-    
+    <!-- Sign Up Page -->
+    <div class="main-container">
+
+        <div class="container">
+            
+            <form>
+                <h1>Sign Up</h1>
+
+                <div class="input-container">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+
+                <div class="input-container">
+                    <input type="text" id="location" placeholder="Your Location" required>
+                </div>
+
+                <div class="gender">
+                    <h4>Choose Your Gender</h4>
+                    <div class="group">
+                      <div class="gender-input">
+                        <input type="radio" name="gender" value="female" id="female" required/>
+                        <label for="female">Female</label>
+                      </div>
+                      <div class="gender-input">
+                        <input type="radio" name="gender" value="male" id="male" required/>
+                        <label for="male">Male</label>
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="gender">
+                    <h4>Choose Gender You Are Interested In</h4>
+                    <div class="group">
+                      <div class="gender-input">
+                        <input type="radio" name="gender" value="0" id="female" required/>
+                        <label for="female">Female</label>
+                      </div>
+                      <div class="gender-input">
+                        <input type="radio" name="gender" value="1" id="male" required/>
+                        <label for="male">Male</label>
+                      </div>
+                      <div class="gender-input">
+                        <input type="radio" name="gender" value="2" id="both" required/>
+                        <label for="both">Both</label>
+                      </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit">Sign Up</button>
+
+                <div class="login">
+                    <span>Already A User?</span>
+                    <button>Login</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
