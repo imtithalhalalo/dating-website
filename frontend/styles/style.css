@@ -256,3 +256,9 @@ input::placeholder {
     background-color: #fff;
     justify-content: space-around;
 }
+.icons {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
