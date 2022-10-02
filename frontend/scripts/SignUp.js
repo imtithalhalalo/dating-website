@@ -8,7 +8,7 @@ export const SignUp = async (base_url) => {
             const password = document.getElementById("password").value;
             const user_gender = document.querySelectorAll('input[name="user_gender"]');
             const interested_gender = document.querySelectorAll('input[name="interested_gender"]');
-            const location = document.getElementById('location').value;
+            const user_location = document.getElementById('location').value;
             
             let usergender;
             const getGender = () => {
@@ -38,10 +38,18 @@ export const SignUp = async (base_url) => {
                     password: password,
                     gender: usergender,
                     interested_in_gender: interestedgender,
-                    location: location
+                    location: user_location
                 };
 
-                const user = await axios.post(url, body);
+                await axios.post(url, body).then(response=>{
+                    if(response.data.message === "User successfully signed up!"){
+                        console.log(response.data.user);
+                        window.location = "./login.html"
+                    }
+                });
+                const login_url = "./login.html";
+                window.location = login_url;                
         })
     }
+    
 }
