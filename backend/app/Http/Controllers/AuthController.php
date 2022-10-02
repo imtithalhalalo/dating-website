@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
@@ -40,15 +41,24 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function login()
+    public function login(Request $request)
     {
-        $credentials = request(['email', 'password']);
+        $credentials = $request->only('email', 'password');
 
-        if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        $token = Auth::attempt($credentials);
+        if (!$token) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Unauthorized',
+            ], 401);
         }
 
-        return $this->respondWithToken($token);
+        $user = Auth::user();
+        return response()->json([
+            'message' => 'User successfully logged In!',
+            'user' => $user,
+            'token' => $this->respondWithToken($token)
+            ]);
     }
 
     /**
