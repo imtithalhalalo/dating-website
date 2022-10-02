@@ -44,7 +44,7 @@ export const SignUp = async (base_url) => {
                 await axios.post(url, body).then(response=>{
                     if(response.data.message === "User successfully signed up!"){
                         console.log(response.data.user);
-                        window.location = "./login.html"
+                        window.location = "login.html"
                     }
                 });
                 const login_url = "./login.html";
