@@ -17,4 +17,19 @@ class UserController extends Controller
         return response()->json($users);
     }
 
+    public function addToFavorite(Request $request)
+    {
+        
+        $favorite = Favorite::create([
+                'user_id' => $request->user_id,
+                'favored_id' => $request->favored_id,
+            ]);
+
+        return response()->json([
+            'message' => 'User successfully added to favorite!',
+            'user' => $favorite
+        ]);
+    }
+
+    
 }
