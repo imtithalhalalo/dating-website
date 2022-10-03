@@ -365,3 +365,6 @@ textarea {
 .chats::-webkit-scrollbar {
     display: none;
 }
+.none {
+    display: none;
+}
