@@ -17,10 +17,10 @@ export const Login = async (base_url) => {
                 if(response.data.message === "User successfully logged In!"){
                     console.log(response.data.token.original.access_token);
                     localStorage.setItem("token", response.data.token.original.access_token);
-                    window.location = "index.html"
+                    localStorage.setItem("id", response.data.user.id);
+                    window.location = "home.html";
                 }
             });
-            // console.log(user.data)
         });
     }
 }
