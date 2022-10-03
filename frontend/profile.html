@@ -30,7 +30,7 @@
             <i class="fa fa-heart"></i>
             <span>Favorite</span>
           </a>
-          <button class="logout-button">Logout</button>
+          <button class="logout-button" id="logout-btn">Logout</button>
         </div>
       </section>
       <!-- End Navigation Bar Column -->
@@ -41,7 +41,7 @@
             <form>
                 <div class="profile-photo">
                     <div class="profile-img">
-                      <div class="image-upload">
+                      <div class="image-upload" id="image-upload">
                         <label for="file-input" class="image">
                           <img
                             src="images/add-photo.png"
@@ -50,7 +50,7 @@
                             height="28px"
                           />
                         </label>
-                        <input id="file-input" type="file" id="profile-input" />
+                        <input id="file-input" type="file" />
                       </div>
                     </div>
                 </div>
@@ -67,11 +67,14 @@
                     <textarea type="text" id="bio" placeholder="Bio" rows="5"></textarea>
                 </div>
                 
-                <button type="submit" class="submit">Edit Profile</button>
+                <button type="submit" id="edit_profile" class="submit">Edit Profile</button>
     
             </form>
         </div>
     </section>
     <!-- End Main Part -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script type="module" src="scripts/index.js"></script>
+    
 </body>
 </html>
