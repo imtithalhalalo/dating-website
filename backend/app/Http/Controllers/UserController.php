@@ -31,5 +31,17 @@ class UserController extends Controller
         ]);
     }
 
+    public function getFavorites(Request $request)
+    {
+        $id = $request->id;
+        
+        $favored_user = DB::table('users')
+                        ->select('*')
+                        ->join('favorites', 'users.id', '=', 'favorites.favored_id')
+                        ->where('favorites.user_id', '=', $id)
+                        ->get();
+        return response()->json($favored_user);
+    }
+
     
 }
