@@ -2,7 +2,7 @@ export const User = (user) => {
     return (`
     <div class="column" id="${user.id}">
         <div class="image-user">
-            <img src="${user.image}" alt="" />
+            <img src="../backend/frontend/${user.image}" alt="" />
         </div>
 
         <div class="info">
