@@ -31,6 +31,20 @@ class UserController extends Controller
         ]);
     }
 
+    public function addBlock(Request $request)
+    {
+        
+        $block = Block::create([
+                'user_id' => $request->user_id,
+                'blocked_id' => $request->blocked_id,
+            ]);
+
+        return response()->json([
+            'message' => 'You Blocked This User',
+            'user' => $block
+        ]);
+    }
+
     public function getFavorites(Request $request)
     {
         $id = $request->id;
