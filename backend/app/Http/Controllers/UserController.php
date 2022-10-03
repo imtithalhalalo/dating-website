@@ -11,6 +11,37 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function editProfile(Request $request){
+        $id = $request->id;
+        $extension = $request->imageExtension;
+        $encryptedImage =$request->encryptedImage;
+
+        if(!$id){
+            return response()->json([
+                "status"=>"failed"
+            ], 500);
+        }
+
+        $user = User::find($id);
+        
+
+        $image_no = time();//imageid
+        $image = base64_decode($encryptedImage);
+        $path = "../uploads/".$image_no.".".$extension;
+        $status = file_put_contents($path,$image);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->age = $request->age;
+        $user->bio = $request->bio;
+        $user->image = $path;
+        $user->save();
+
+        return response()->json([
+            "status"=>"success",
+            "user" => $user
+        ], 200);
+    }
+
     public function allUsers(){
         
         $users = User::all();
