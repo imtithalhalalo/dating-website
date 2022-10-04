@@ -44,6 +44,7 @@ class UserController extends Controller
     public function allUsers() {
         $id = Auth::user()->id;
         $users = User::where('id', '!=', $id)
+                        ->orderBy('location', 'asc')
                         ->get();
         return response()->json($users);
     }
@@ -52,6 +53,7 @@ class UserController extends Controller
         $id = Auth::user()->id;
         $users = User::where('id', '!=', $id)
                         ->where('users.gender' , '=', 'female')
+                        ->orderBy('location', 'asc')
                         ->get();
         return response()->json($users);
     }
@@ -60,6 +62,7 @@ class UserController extends Controller
         $id = Auth::user()->id;
         $users = User::where('id', '!=', $id)
                         ->where('users.gender' , '=', 'male')
+                        ->orderBy('location', 'asc')
                         ->get();
         return response()->json($users);
     }
