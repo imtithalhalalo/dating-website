@@ -13,6 +13,7 @@ Route::group(["prefix"=> "v0.1"], function(){
         Route::get('/allfemaleusers', [UserController::class, 'allFemaleUsers'])->name('all-female-users');
         Route::get('/allmaleusers', [UserController::class, 'allMaleUsers'])->name('all-male-users');
         Route::post('/addfavorite', [UserController::class, 'addToFavorite'])->name('addtofavorite');
+        Route::post('/removefavorite', [UserController::class, 'removeFavorite'])->name('removefavorite');
         Route::post('/addblocked', [UserController::class, 'addBlock'])->name('add-block');
         Route::get('/getfavorites', [UserController::class, 'getFavorites'])->name('get-favorite');
         Route::post('/editprofile', [UserController::class, 'editProfile'])->name('edit-profile');
