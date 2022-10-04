@@ -2,13 +2,10 @@ import { User } from "./User.js";
 import { AddTo } from "./AddTo.js";
 export const GetFavorites = async (base_url) => {
     if(document.getElementById("favorites-row")){
-        let favoritesHTML = "";
-        
-        const id = localStorage.getItem("id");
-        
-        const url = base_url + "/getfavorites/" +id;
+        let favoritesHTML = "";    
+        const url = base_url + "/getfavorites";
         debugger
-        const favorites = await axios.get(url);
+        const favorites = await axios.get(url, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
         favorites.data.map(favorite => {
             favoritesHTML += User(favorite);
         })
@@ -23,7 +20,6 @@ export const GetFavorites = async (base_url) => {
         favorite_section.forEach(favorite => {
             favorite.addEventListener("click", (e) => {
                 let data = {
-                    user_id: localStorage.getItem("id"),
                     favored_id: e.currentTarget.parentElement.id
                 };
                 
@@ -35,7 +31,6 @@ export const GetFavorites = async (base_url) => {
     block_section.forEach(block => {
         block.addEventListener("click", (e) => {
             let data = {
-                user_id: localStorage.getItem("id"),
                 blocked_id: e.currentTarget.parentElement.id
             };
 
