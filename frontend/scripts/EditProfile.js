@@ -36,16 +36,15 @@ if(document.getElementById("image-upload")){
     
     console.log(name,age,bio,encryptedImage,imageExtension);
     const url = base_url + "/editprofile";
-    // // Send data to the backend
+    // Send data to the backend
     const data ={
-        id: localStorage.getItem(`id`),
         name: name,
         age: age,
         bio: bio,
         encryptedImage: encryptedImage,
         imageExtension: imageExtension
     }
-    const edit_profile = await axios.post(url, data, { headers: {'Authorization': `token ${localStorage.getItem(`token`)}`}});
+    const edit_profile = await axios.post(url, data, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
     console.log(edit_profile.data);
     
   }
