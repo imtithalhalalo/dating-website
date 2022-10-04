@@ -368,3 +368,21 @@ textarea {
 .none {
     display: none;
 }
+.users {
+    width: 200px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: #31383F 0px 0px 10px 0px;
+    border-radius: 20px;
+}
+
+.profile {
+    align-items: center;
+    display: flex;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    border-radius: 20px;
+  }
+  .profile:hover {
+    box-shadow: inset 200px 0 0 0 #d68f9f;
+    color: white;
+  }
