@@ -1,3 +1,4 @@
+// import { GetLocation  } from "./GetLocation";
 export const SignUp = async (base_url) => {
    
     if (document.getElementById("signup")) {
@@ -18,7 +19,8 @@ export const SignUp = async (base_url) => {
                     }
                 }
             }
-
+            // let location_distance = GetLocation();
+            // console.log(location_distance);
             let interestedgender;
             const getInterestedGender = () => {
                 for (let i = 0; i < interested_gender.length; i++) {
@@ -30,6 +32,7 @@ export const SignUp = async (base_url) => {
 
             getGender();
             getInterestedGender();
+            localStorage.setItem("interested_in", interestedgender);
 
                 const url = base_url + "/signup";
                 const body = {
@@ -37,13 +40,14 @@ export const SignUp = async (base_url) => {
                     email: email,
                     password: password,
                     gender: usergender,
-                    interested_in_gender: interestedgender,
-                    location: user_location
+                    location: user_location,
+                    // location_distance: location_distance
                 };
 
                 await axios.post(url, body).then(response=>{
                     if(response.data.message === "User successfully signed up!"){
                         console.log(response.data.user);
+                        // console.log(response.data.token);
                         window.location = "login.html"
                     }
                 });
