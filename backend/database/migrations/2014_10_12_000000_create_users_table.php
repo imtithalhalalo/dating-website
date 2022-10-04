@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('bio', 255)->nullable();
             $table->string('image', 255)->nullable();
             $table->string('gender', 45);
-            $table->string('interested_in_gender', 45);
             $table->rememberToken();
             $table->timestamps();
         });
