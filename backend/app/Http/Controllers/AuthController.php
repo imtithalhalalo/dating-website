@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-class AuthController extends Controller
-{
+class AuthController extends Controller {
 
     public function signup(Request $request) {
         
@@ -17,30 +16,30 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'gender' => $request->gender,
-                'interested_in_gender' => $request->interested_in_gender,
                 'location' => $request->location
             ]);
-
+        $token = Auth::login($user);
         return response()->json([
             'message' => 'User successfully signed up!',
-            'user' => $user
+            'user' => $user,
+            'token' => $token
         ]);
     }
+
     public function login(Request $request) {
         $credentials = $request->only('email', 'password');
-
         $token = Auth::attempt($credentials);
+        User::find(Auth::user()->id);
+        
         if (!$token) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Unauthorized',
             ], 401);
         }
-
-        $user = Auth::user();
         return response()->json([
             'message' => 'User successfully logged In!',
-            'user' => $user,
+            'user' => Auth::user(),
             'token' => $this->respondWithToken($token)
             ]);
     }

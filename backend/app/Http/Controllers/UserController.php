@@ -6,13 +6,12 @@ use App\Models\Favorite;
 use App\Models\Block;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function editProfile(Request $request){
-        $id = $request->id;
+    public function editProfile(Request $request) {
+        $id = Auth::user()->id;
         $extension = $request->imageExtension;
         $encryptedImage =$request->encryptedImage;
 
@@ -42,17 +41,17 @@ class UserController extends Controller
         ], 200);
     }
 
-    public function allUsers(){
-        
-        $users = User::all();
+    public function allUsers() {
+        $id = Auth::user()->id;
+        $users = User::where('id', '!=', $id)
+                        ->get();
         return response()->json($users);
     }
 
-    public function addToFavorite(Request $request)
-    {
-        
+    public function addToFavorite(Request $request) {
+
         $favorite = Favorite::create([
-                'user_id' => $request->user_id,
+                'user_id' => Auth::user()->id,
                 'favored_id' => $request->favored_id,
             ]);
 
@@ -62,11 +61,10 @@ class UserController extends Controller
         ]);
     }
 
-    public function addBlock(Request $request)
-    {
+    public function addBlock(Request $request) {
         
         $block = Block::create([
-                'user_id' => $request->user_id,
+                'user_id' => Auth::user()->id,
                 'blocked_id' => $request->blocked_id,
             ]);
 
@@ -76,17 +74,16 @@ class UserController extends Controller
         ]);
     }
 
-    public function getFavorites(Request $request)
-    {
-        $id = $request->id;
+    public function getFavorites() {
+        $id = Auth::user()->id;
         
-        $favored_user = DB::table('users')
-                        ->select('*')
-                        ->join('favorites', 'users.id', '=', 'favorites.favored_id')
+        $favored_user = User::join('favorites', 'users.id', '=', 'favorites.favored_id')
                         ->where('favorites.user_id', '=', $id)
                         ->get();
         return response()->json($favored_user);
     }
 
-    
+    public function getFemalesUsers() {
+
+    }
 }
