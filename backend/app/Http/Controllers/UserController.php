@@ -108,4 +108,23 @@ class UserController extends Controller
             'message' => 'Favorite Deleted'
         ]);
     }
+
+    public function getBlockedUsers() {
+        $id = Auth::user()->id;
+        
+        $blocked_user = User::join('blocks', 'users.id', '=', 'blocks.blocked_id')
+                        ->where('blocks.user_id', '=', $id)
+                        ->get();
+        return response()->json($blocked_user);
+    }
+
+    public function removeBlock(Request $request) {
+        Block::where('user_id', Auth::user()->id)
+                    ->where('blocked_id', $request->blocked_id)
+                    ->delete();
+
+        return response()->json([
+            'message' => 'Block Deleted'
+        ]);
+    }
 }
