@@ -22,4 +22,16 @@ class MessageController extends Controller {
         }
     }
 
+    public function receiveMessages(Request $request) {
+        $receiver_id = $request->receiver_id;
+        $user_id = Auth::user()->id;
+        $message_user = Message::where('user_id', '=', $user_id)
+                        ->where('receiver_id', '=', $receiver_id)
+                        ->get();
+
+        return response()->json([
+            'status' => 'success',
+            'messages' => $message_user 
+        ]);
+    }
 }
