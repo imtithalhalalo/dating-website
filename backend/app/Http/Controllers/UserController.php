@@ -48,6 +48,22 @@ class UserController extends Controller
         return response()->json($users);
     }
 
+    public function allFemaleUsers() {
+        $id = Auth::user()->id;
+        $users = User::where('id', '!=', $id)
+                        ->where('users.gender' , '=', 'female')
+                        ->get();
+        return response()->json($users);
+    }
+
+    public function allMaleUsers() {
+        $id = Auth::user()->id;
+        $users = User::where('id', '!=', $id)
+                        ->where('users.gender' , '=', 'male')
+                        ->get();
+        return response()->json($users);
+    }
+
     public function addToFavorite(Request $request) {
 
         $favorite = Favorite::create([
