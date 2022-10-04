@@ -9,8 +9,12 @@
 </head>
 <body class="background">
     <!-- Sign Up Page -->
+    
     <div class="main-container">
-
+      <!-- Tried to add location but it didn't work -->
+        <!-- <button id="location-log" class="submit">
+          Add Location
+        </button> -->
         <div class="container">
             
             <form>
@@ -31,6 +35,8 @@
                   <input type="text" id="location" placeholder="Your Location" required>
                 </div>
 
+                
+                <h4 id="status"></h4>
                 <div class="gender">
                     <h4>Choose Your Gender</h4>
                     <div class="group">
@@ -49,12 +55,16 @@
                     <h4>Choose Gender You Are Interested In</h4>
                     <div class="group">
                       <div class="gender-input">
-                        <input type="radio" name="interested_gender" value="female" id="interested-female" required/>
-                        <label for="female">Female</label>
+                        <input type="radio" name="interested_gender" value="1" id="interested-female" required/>
+                        <label for="interested-female">Female</label>
                       </div>
                       <div class="gender-input">
-                        <input type="radio" name="interested_gender" value="male" id="interested-male" required/>
-                        <label for="male">Male</label>
+                        <input type="radio" name="interested_gender" value="2" id="interested-male" required/>
+                        <label for="interested-male">Male</label>
+                      </div>
+                      <div class="gender-input">
+                        <input type="radio" name="interested_gender" value="3" id="interested-both" required/>
+                        <label for="interested-both">Both</label>
                       </div>
                     </div>
                 </div>

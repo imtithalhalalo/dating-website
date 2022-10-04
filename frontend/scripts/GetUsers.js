@@ -1,9 +1,17 @@
 import { User } from "./User.js";
 import { AddTo } from "./AddTo.js";
 export const GetUsers = async (base_url) => {
+    let url = "";
     if(document.getElementById("users-row")){
+        if(localStorage.getItem("interested_in") == 1) {
+             url = base_url + "/allfemaleusers";
+        }else if (localStorage.getItem("interested_in") == 2) {
+            url = base_url + "/allmaleusers";
+        }else if (localStorage.getItem("interested_in") == 3) {
+            url = base_url + "/allusers";
+        }
         let usersHTML = "";
-        const url = base_url + "/allusers";
+        
         
         const token = localStorage.getItem('token');
         console.log(token)
