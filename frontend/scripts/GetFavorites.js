@@ -4,7 +4,6 @@ export const GetFavorites = async (base_url) => {
     if(document.getElementById("favorites-row")){
         let favoritesHTML = "";    
         const url = base_url + "/getfavorites";
-        debugger
         const favorites = await axios.get(url, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
         favorites.data.map(favorite => {
             favoritesHTML += User(favorite);
