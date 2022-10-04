@@ -99,7 +99,13 @@ class UserController extends Controller
         return response()->json($favored_user);
     }
 
-    public function getFemalesUsers() {
+    public function removeFavorite(Request $request) {
+        Favorite::where('user_id', Auth::user()->id)
+                    ->where('favored_id', $request->favored_id)
+                    ->delete();
 
+        return response()->json([
+            'message' => 'Favorite Deleted'
+        ]);
     }
 }
