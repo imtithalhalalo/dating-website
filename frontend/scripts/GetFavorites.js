@@ -22,7 +22,8 @@ export const GetFavorites = async (base_url) => {
                     favored_id: e.currentTarget.parentElement.id
                 };
                 
-                AddTo('favorite', data);
+                AddTo('favoriteremove', data);
+                document.getElementById(e.currentTarget.parentElement.id).classList.add('none');
             })
         });
 
@@ -34,7 +35,7 @@ export const GetFavorites = async (base_url) => {
             };
 
             AddTo('block', data);
-            document.getElementById(localStorage.getItem("id")).classList.add('none');
+            document.getElementById(e.currentTarget.parentElement.id).classList.add('none');
         })
         
     });
