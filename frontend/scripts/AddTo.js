@@ -1,4 +1,3 @@
-import { SendMessage } from "./SendMessage.js";
 const base_url = "http://127.0.0.1:8000/api/v0.1";
 export const AddTo = async (type, data) => {
 
@@ -18,6 +17,13 @@ export const AddTo = async (type, data) => {
 
     if(type == 'favoriteremove'){
         const url = "http://127.0.0.1:8000/api/v0.1/removefavorite";
+        const response = await axios.post(url, data, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
+        console.log(response);
+        alert(response.data.message);
+    }
+
+    if(type == 'removeblock'){
+        const url = "http://127.0.0.1:8000/api/v0.1/removeblock";
         const response = await axios.post(url, data, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
         console.log(response);
         alert(response.data.message);
