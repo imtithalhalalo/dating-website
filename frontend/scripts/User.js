@@ -11,7 +11,6 @@ export const User = (user) => {
                 <br>
                 <div class="icons">
                     <span id="${user.id}"><i class="fa fa-heart-o"></i></span>
-                    <span id="${user.id}"><i class="fa fa-comment-o"></i></span>
                     <span id="${user.id}"><i class="fa fa-ban"></i></span>
                 </div>
             </div>
