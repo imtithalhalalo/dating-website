@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->integer('age')->default(0);
             $table->string('location', 255)->nullable();
             $table->string('bio', 255)->nullable();
-            $table->string('image', 255)->nullable();
+            $table->string('image', 255)->default('../uploads/default.png');
             $table->string('gender', 45);
             $table->rememberToken();
             $table->timestamps();
