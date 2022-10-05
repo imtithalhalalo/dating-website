@@ -46,10 +46,25 @@ if(document.getElementById("image-upload")){
     }
     const edit_profile = await axios.post(url, data, { headers: {'Authorization': `Bearer ${localStorage.getItem(`token`)}`}});
     console.log(edit_profile.data);
+    if(edit_profile.data.status == 'success'){
+      document.getElementById('inform-status').innerText = "Profile Edited Successfully";
+      document.getElementById('pop-inform').classList.add('popup-visible'); 
+        document.getElementById('close-btn').addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('pop-inform').classList.remove('popup-visible');
+        })
+
+        document.getElementById('ok-btn').addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('pop-inform').classList.remove('popup-visible');
+        })
+      
+    }
+    
     
   }
 
-
+  
 
   document.getElementById("edit_profile").addEventListener("click", edit);
 
