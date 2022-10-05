@@ -400,3 +400,46 @@ textarea {
     box-shadow: inset 200px 0 0 0 #d68f9f;
     color: white;
 }
+
+  /* Media Query */
+@media only screen and (max-width: 800px) {
+    
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .header {
+      width: 13%;
+      padding: 10px 5px;
+    }
+  
+    .main {
+      margin-left: 10%;
+      width: 87%;
+    }
+    .header span {
+      display: none;
+    }
+  
+    .header .logout-button {
+      width: 40px;
+      border-radius: 50%;
+      font-size: 0.6rem;
+      margin-left: 20px;
+    }
+  
+  
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      padding: 4px 4px 4px 4px;
+      font-size: 15px;
+      margin-left: 20px;
+      width: fit-content;
+    }
+    .nav-links a i {
+      margin-right: 0;
+    }
+  }
+  
