@@ -156,8 +156,8 @@ textarea {
 }
 
 .logo-small {
-    width: 68px;
-    height: 68px;
+    width: 48px;
+    height: 48px;
 }
 /* Home Page */
 .header {
@@ -182,7 +182,7 @@ textarea {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 35%;
+    height: 40%;
     justify-content: space-between;
   }
 .nav-links a {
@@ -191,20 +191,27 @@ textarea {
     padding: 8px 25px 8px 8px;
     font-size: 15px;
     width: fit-content;
+    margin-bottom: 10px;
 }
 .nav-links a i {
     margin-right: 15px;
     font-size: 1.5rem;
 }
 .nav-links a:hover {
-    background-color:#F2E9eb;
+    background-color:#d68f9f;
     border-radius: 50px;
+    color: #F0F0F0;
 }
 .nav-links a:hover:first-child {
     background-color:#F2E9eb;
 }
 .nav-links a:first-child i {
     margin: 0;
+}
+.clicked {
+    background-color:#d68f9f;
+    border-radius: 50px;
+    color: #F0F0F0;
 }
 .logout-button {
     background-color: #31383F;
@@ -220,6 +227,9 @@ textarea {
     margin-top: 15px;
     font-size: 1rem;
 }
+.logout-button:hover {
+    background-color: #31383f7e;
+}
 
 /* Main Section Users */
 .column {
@@ -233,7 +243,11 @@ textarea {
     border-radius: 20px;
     box-shadow: #31383F 0px 0px 10px 0px;
 }
-
+.column:hover {
+    transition: width 2s;
+    width: 180px;
+    box-shadow: #d68f9f 1px 1px 10px 0px;
+}
 .image-user {
     width: 150px;
     height: 150px;
@@ -381,8 +395,8 @@ textarea {
     display: flex;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     border-radius: 20px;
-  }
-  .profile:hover {
+}
+.profile:hover {
     box-shadow: inset 200px 0 0 0 #d68f9f;
     color: white;
-  }
+}
